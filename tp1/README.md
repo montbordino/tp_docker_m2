@@ -10,3 +10,10 @@ docker build -t flask-app .
 
 **run l'application sur le port 5000:**
 docker run -d -p 5000:5000 flask-app
+
+## Exercice 6:
+**déplacement dans le répertoire de l'app:**
+cd .\complex-flask-app
+
+**build et run de l'application:**
+docker compose up --build
