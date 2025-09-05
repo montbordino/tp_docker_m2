@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY app.py /app
 
-# Installer Flask et PyMongo
 RUN pip install flask pymongo
 
 EXPOSE 5000
