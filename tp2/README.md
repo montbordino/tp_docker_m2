@@ -5,8 +5,10 @@ Pour éviter que le **cache** des builds précédents fausse les résultats, nou
 
 Le test de chaque version du projet se fera de la manière suivant:
 - suppression du cache
-- build de l'image: `docker build -t tp2_v1 .`
+- build de l'image `docker build -t tp2_v1 .`
 - verification de la taille de l'image `docker images`
+- lancement de l'image `docker run -d -p 3000:3000 tp2_v1`
+- test du projet sur le port 3000 dans un navigateur
 
 ### 1 - commit initial
 
@@ -18,9 +20,16 @@ Pour le moment le projet n'as pas été modifié, le build est long et l'image e
 build: 77.8s
 taille: 1.77GB
 
-### 2 - suppression des nodes_modules
+### 2 - suppression des nodes_modules de github
 Lors de cette etape on ajoute un .gitignore et on supprime les nodes modules du cache avec cette commande : `git rm -r --cached .`
 Elle n'optimise pas le docker mais cette étape est primordiale pour le dépot github.
 
 build: 77.8s
 taille: 1.77GB
+
+
+### 3 - image node
+Dans le projet on charge la dernière image de node `FROM node:latest`. La meilleure façon de charger node serai de charger une **version précise de node** car en cas de montée de version de node notre projet pourrait ne plus fonctionner. De plus on peut choisir de télécharger une image lite de node pour réduire la taille de l'image. On choisi ici node:24-slim, cette version est plus légère et réduit la taille de l'image. Cependant elle rallonge certaines taches, notement les méthodes RUN.
+
+build: 127s
+taille: 953MB
