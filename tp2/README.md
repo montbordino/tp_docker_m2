@@ -48,3 +48,10 @@ Lors de cette étape on supprime la commande RUN qui installait les locales. En 
 
 build: 23.8s
 taille: 358MB
+
+### 6 - optimisation de l'image node
+
+Maintenant que nous n'utilisons pas de commandes apt-get, nous pouvons alléger encore plus l'image en utilisant une version **alpine** de node. Cette version est beaucoup plus légère que la version slim.
+
+build: 48.3s
+taille: 260MB
