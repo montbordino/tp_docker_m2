@@ -2,6 +2,7 @@
 Lors de ce tp qui consiste à optimiser le serveur nous utiliserons comme mesures le **temps de build** et la **taille de l'image** pour déterminer l'optimisation de celle-ci. 
 
 Pour éviter que le **cache** des builds précédents fausse les résultats, nous utiliserons la commande `docker system prune --all --force`. Elle permet de supprimer le cache, les builds, containers, env et images sans demander de confirmation.
+On peut également utiliser la commande `--no-cache` lors du build pour éviter d'y accéder.
 
 Le test de chaque version du projet se fera de la manière suivant:
 - suppression du cache
@@ -33,3 +34,10 @@ Dans le projet on charge la dernière image de node `FROM node:latest`. La meill
 
 build: 127s
 taille: 953MB
+
+### 4 - modification des COPY
+
+Il est préférable de ne faire qu'un seul copy de toute l'application plutot que de faire plusieurs copies. En effet chaque COPY crée une nouvelle couche dans l'image et augmente la taille de celle-ci. De plus, en copiant tout le projet on évite d'oublier des fichiers.
+
+build: 132s
+taille: 919MB
