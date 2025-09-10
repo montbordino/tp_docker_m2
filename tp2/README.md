@@ -41,3 +41,10 @@ Il est préférable de ne faire qu'un seul copy de toute l'application plutot qu
 
 build: 132s
 taille: 919MB
+
+### 5 - suppression des run inutiles
+
+Lors de cette étape on supprime la commande RUN qui installait les locales. En effet cette commande n'est pas utile pour le projet et alourdit l'image. Cette étape est longue et n'apporte rien au projet.
+
+build: 23.8s
+taille: 358MB
