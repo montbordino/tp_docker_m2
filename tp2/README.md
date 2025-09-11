@@ -51,7 +51,7 @@ taille: 358MB
 
 ### 6 - optimisation de l'image node
 
-Maintenant que nous n'utilisons pas de commandes apt-get, nous pouvons alléger encore plus l'image en utilisant une version **alpine** de node. Cette version est beaucoup plus légère que la version slim.
+Maintenant que nous n'utilisons pas de commandes apt-get, nous pouvons alléger encore plus l'image en utilisant une version **alpine** de node 24. Cette version est beaucoup plus légère que la version slim.
 
 build: 48.3s
 taille: 260MB
@@ -72,3 +72,20 @@ Cette amélioration ne change pas la taille de l'image mais rend le dockerfile p
 
 build: 22.2s
 taille: 194MB
+
+### Conclusion
+
+Après ces différentes étapes d'optimisation, nous sommes passés d'une image de 1.77GB à une image de 194MB, soit une réduction de plus de 89%. Le temps de build est également passé de 77.8s à 22.2s, soit une réduction de plus de 71%.
+
+**Tableau récapitulatif**
+
+| Etape                             | Temps de build | Taille de l'image | Image node     |
+| --------------------------------- | -------------- | ----------------- | -------------- |
+| Commit initial                    | 77.8s          | 1.77GB            | Node:latest    |
+| Suppression des node_modules      | 77.8s          | 1.77GB            | Node:latest    |
+| Image node                        | 127s           | 953MB             | Node:24-slim   |
+| Modification des COPY             | 132s           | 919MB             | Node:24-slim   |
+| Suppression des RUN inutiles      | 23.8s          | 358MB             | Node:24-slim   |
+| Image alpine                      | 48.3s          | 260MB             | Node:24-alpine |
+| Version de node                   | 46.3s          | 194MB             | Node:16-alpine |
+| Suppression des éléments inutiles | 22.2s          | 194MB             | Node:16-alpine |
