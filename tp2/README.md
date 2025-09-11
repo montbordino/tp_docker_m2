@@ -55,3 +55,10 @@ Maintenant que nous n'utilisons pas de commandes apt-get, nous pouvons alléger 
 
 build: 48.3s
 taille: 260MB
+
+### 7 - optimisation de la version de node
+
+On peut encore alléger l'image en utilisant une version plus ancienne de node. En effet, la version 24 n'apporte pas d'améliorations significatives pour notre projet. On utilise ici la version 16 qui est largement suffisante pour notre projet.
+
+build: 46.3s
+taille 194MB
