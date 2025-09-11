@@ -62,3 +62,13 @@ On peut encore alléger l'image en utilisant une version plus ancienne de node. 
 
 build: 46.3s
 taille 194MB
+
+### 8 - supression des éléments inutiles
+
+Cette amélioration ne change pas la taille de l'image mais rend le dockerfile plus propre. 
+- On supprime les ports 4000 et 5000 qui ne sont pas utilisés dans le projet. 
+- On supprime également la variable d'environnement NODE_ENV qui n'est pas utilisée dans le projet.
+- On supprime l'utilisateur root qui n'est pas nécessaire pour le projet.
+
+build: 22.2s
+taille: 194MB
