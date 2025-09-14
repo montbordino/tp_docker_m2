@@ -86,14 +86,14 @@ Après ces différentes étapes d'optimisation, nous sommes passés d'une image 
 
 **Tableau récapitulatif**
 
-| Etape                             | Temps de build | Taille de l'image | Image node     |
-| --------------------------------- | -------------- | ----------------- | -------------- |
-| Commit initial                    | 77.8s          | 1.77GB            | Node:latest    |
-| Suppression des node_modules      | 77.8s          | 1.77GB            | Node:latest    |
-| Image node                        | 127s           | 953MB             | Node:24-slim   |
-| Modification des COPY             | 132s           | 919MB             | Node:24-slim   |
-| Suppression des RUN inutiles      | 23.8s          | 358MB             | Node:24-slim   |
-| Image alpine                      | 48.3s          | 260MB             | Node:24-alpine |
-| Version de node                   | 46.3s          | 194MB             | Node:16-alpine |
-| Suppression des éléments inutiles | 22.2s          | 194MB             | Node:16-alpine |
-| Suppression de mangoDB            | 11.0s          | 179MB             | Node:16-alpine |
+| Version | Etape                             | Temps de build | Taille de l'image | Image node     |
+| ------- | --------------------------------- | -------------- | ----------------- | -------------- |
+| V1      | Commit initial                    | 77.8s          | 1.77GB            | Node:latest    |
+| V1.1    | Suppression des node_modules      | 77.8s          | 1.77GB            | Node:latest    |
+| V2      | Image node                        | 127s           | 953MB             | Node:24-slim   |
+| V3      | Modification des COPY             | 132s           | 919MB             | Node:24-slim   |
+| V4      | Suppression des RUN inutiles      | 23.8s          | 358MB             | Node:24-slim   |
+| V5      | Image alpine                      | 48.3s          | 260MB             | Node:24-alpine |
+| V6      | Version de node                   | 46.3s          | 194MB             | Node:16-alpine |
+| V6.1    | Suppression des éléments inutiles | 22.2s          | 194MB             | Node:16-alpine |
+| V7      | Suppression de mangoDB            | 11.0s          | 179MB             | Node:16-alpine |
