@@ -82,7 +82,7 @@ taille: 179MB
 
 ### Conclusion
 
-Après ces différentes étapes d'optimisation, nous sommes passés d'une image de 1.77GB à une image de 194MB, soit une réduction de plus de 89%. Le temps de build est également passé de 77.8s à 22.2s, soit une réduction de plus de 71%.
+Après ces différentes étapes d'optimisation, nous sommes passés d'une image de 1.77GB à une image de 179MB, soit une réduction de plus de 89%. Le temps de build est également passé de 77.8s à 11.0s, soit une réduction de plus de 85%.
 
 **Tableau récapitulatif**
 
