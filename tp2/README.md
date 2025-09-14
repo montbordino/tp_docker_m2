@@ -73,6 +73,13 @@ Cette amélioration ne change pas la taille de l'image mais rend le dockerfile p
 build: 22.2s
 taille: 194MB
 
+### 9 - suppression de mangoDB
+
+Dans le package.json **mangoDb** est ajouté en dépendance dans le projet mais n'est pas utilisé. Pour alléger le projet il faut donc le supprimer. Pour cela on le supprime du package.json, on supprime les node_modules et on relance la commande `npm install`.
+
+build: 11.0s
+taille: 179MB
+
 ### Conclusion
 
 Après ces différentes étapes d'optimisation, nous sommes passés d'une image de 1.77GB à une image de 194MB, soit une réduction de plus de 89%. Le temps de build est également passé de 77.8s à 22.2s, soit une réduction de plus de 71%.
@@ -89,3 +96,4 @@ Après ces différentes étapes d'optimisation, nous sommes passés d'une image 
 | Image alpine                      | 48.3s          | 260MB             | Node:24-alpine |
 | Version de node                   | 46.3s          | 194MB             | Node:16-alpine |
 | Suppression des éléments inutiles | 22.2s          | 194MB             | Node:16-alpine |
+| Suppression de mangoDB            | 11.0s          | 179MB             | Node:16-alpine |
